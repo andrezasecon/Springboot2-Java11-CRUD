@@ -12,10 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.andrezasecon.crud.entities.User;
 import com.andrezasecon.crud.services.UserService;
 
+// A camada Resource é responsável por controlar os dados requisitados pelo front ou aplicação
+// ela chama a camada de serviço que implementa as regras de negócio
+// ela é nossa Rest Controller
+
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping(value = "/users") // path da requisição http
 public class UserResouce {
 	
+	// Injeção de dependencia para a camada de Serviço (Instância da classe) usando a notation @Autowired
 	@Autowired
 	private UserService service;
 	
@@ -26,7 +31,7 @@ public class UserResouce {
 		
 	}
 	
-	@GetMapping(value = "/{id}")
+	@GetMapping(value = "/{id}") // path da requisição http
 	public ResponseEntity<User> findById(@PathVariable Long id){
 		
 		User obj = service.findById(id);

@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 import com.andrezasecon.crud.entities.User;
 import com.andrezasecon.crud.repositories.UserRepository;
 
+//na camada Service, implementamos as regras de negócio, esta camada chama a repository que 
+//controla o acesso aos dados no banco
+
 @Service
 public class UserService {
 
