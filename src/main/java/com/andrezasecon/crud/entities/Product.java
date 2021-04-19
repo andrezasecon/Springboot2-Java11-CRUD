@@ -1,11 +1,16 @@
 package com.andrezasecon.crud.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +25,13 @@ public class Product implements Serializable {
 	private String description;
 	private Double price;
 	private String imgUrl;
+	
+	@ManyToMany  // associoação de muitos para muitos, criando a tabela de relacionamento no banco
+	@JoinTable(
+	name = "tb_product_category", // tabela de relacionamento entre produtos e categorias
+	joinColumns = @JoinColumn(name = "product_id"), // nome do campo de id do produto na tabela de relacionamento
+	inverseJoinColumns = @JoinColumn(name = "category_id")) // // nome do campo de id da categoria na tabela de relacionamento	
+	private Set<Category> categories = new HashSet<>();
 	
 	public Product() {
 		
@@ -72,6 +84,10 @@ public class Product implements Serializable {
 
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
+	}	
+
+	public Set<Category> getCategories() {
+		return categories;
 	}
 
 	@Override
