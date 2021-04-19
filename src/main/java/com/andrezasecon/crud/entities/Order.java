@@ -32,14 +32,17 @@ public class Order implements Serializable {
 	@JoinColumn(name = "client_id") // nome para a chave estrangeira 	
 	private User client;
 	
+	private Integer orderStatus;
+	
 	public Order() {
 	}
 
-	public Order(Long id, Instant moment, User client) {
+	public Order(Long id, Instant moment, OrderStatus orderStatus, User client) {
 		super();
 		this.id = id;
 		this.moment = moment;
-		this.client = client;
+		setOrderStatus(orderStatus);
+  		this.client = client;
 	}
 
 	public Long getId() {
@@ -64,6 +67,17 @@ public class Order implements Serializable {
 
 	public void setClient(User client) {
 		this.client = client;
+	}
+	
+	
+
+	public OrderStatus getOrderStatus() {
+		return OrderStatus.valueOf(orderStatus);
+	}
+
+	public void setOrderStatus(OrderStatus orderStatus) {
+		if(orderStatus != null)
+			this.orderStatus = orderStatus.getCode();
 	}
 
 	@Override
