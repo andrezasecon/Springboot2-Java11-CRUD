@@ -29,5 +29,10 @@ public class UserService {
 		return obj.get();
 	}
 	
+	// Método que chama a inserção de usuário da classe resource
+	
+	public User insert(User obj) {
+		return repository.save(obj);		
+	}
 	
 }
