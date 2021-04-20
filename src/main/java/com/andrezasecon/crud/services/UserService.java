@@ -35,4 +35,8 @@ public class UserService {
 		return repository.save(obj);		
 	}
 	
+	// método que chama a deleção de usuário da classe resource
+	public void delete(Long id) {
+		repository.deleteById(id);;
+	}
 }
