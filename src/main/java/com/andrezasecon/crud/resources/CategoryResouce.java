@@ -45,4 +45,11 @@ public class CategoryResouce {
 		return ResponseEntity.created(uri).body(obj);
 	}
 
+	//Deleção de usuário resposta 204
+	@DeleteMapping(value = "/{id}")
+	public ResponseEntity<Void> delete (@PathVariable Long id){
+		service.delete(id);
+		return ResponseEntity.noContent().build();
+	}
+
 }
