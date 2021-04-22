@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 import com.andrezasecon.crud.entities.Category;
 import com.andrezasecon.crud.repositories.CategoryRepository;
 
+import javax.persistence.EntityNotFoundException;
+
 //na camada Service, implementamos as regras de negócio, esta camada chama a repository que 
 //controla o acesso aos dados no banco
 
@@ -34,12 +36,13 @@ public class CategoryService {
 		return obj.get();
 	}
 
+	// Método para inserir uma categoria
 	public Category insert(Category obj) {
 
 		return repository.save(obj);
 	}
 
-	// método que chama a deleção de usuário da classe resource
+	// método que chama a deleção de categoria da classe resource
 	public void delete(Long id) {
 		try {
 			repository.deleteById(id);
@@ -48,6 +51,21 @@ public class CategoryService {
 		} catch (DataIntegrityViolationException e) {
 			throw new DatabaseException(e.getMessage());
 		}
+	}
+
+	// metodo para atualizar a categoria por id
+	public Category update(Long id, Category obj) {
+		try {
+			 Category entity = repository.getOne(id);
+			updateData(entity, obj);
+			return repository.save(entity);
+		}catch (EntityNotFoundException e) {
+			throw new ResourceNotFoundException(id);
+		}
+	}
+
+	private void updateData(Category entity, Category obj) {
+		entity.setName(obj.getName());
 	}
 	
 	

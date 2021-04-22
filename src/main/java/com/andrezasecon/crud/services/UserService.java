@@ -51,7 +51,7 @@ public class UserService {
 			throw new DatabaseException(e.getMessage());
 		}
 	}
-	
+	// metodo para atualizar o usuário por id
 	public User update(Long id, User obj) {
 		try {
 		User entity = repository.getOne(id);
