@@ -3,6 +3,7 @@ package com.andrezasecon.crud.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.andrezasecon.crud.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,11 @@ public class CategoryService {
 	public Category findById(Long id) {
 		Optional<Category> obj = repository.findById(id);
 		return obj.get();
+	}
+
+	public Category insert(Category obj) {
+
+		return repository.save(obj);
 	}
 	
 	
