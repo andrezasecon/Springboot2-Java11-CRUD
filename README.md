@@ -33,11 +33,11 @@ PostgreSQL
 
 ## Modelo lógico com padrão em camadas
 
-![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/tree/master/imagens/modelo-logico-camadas.PNG)
+![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/blob/master/imagens/modelo-logico-camadas.PNG)
 
 ## Modelo de domínio - UML
 
-![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/tree/master/imagens/modelo-dominio.PNG)
+![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/blob/master/imagens/modelo-dominio.PNG)
 
 
 
@@ -114,7 +114,7 @@ java.runtime.version=11
 
 ## Requisição Client utilizando o POSTMAN
 
-![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/tree/master/imagens/POSTMAN.png)
+![]https://github.com/andrezasecon/Springboot2-Java11-CRUD/blob/master/imagens/POSTMAN.png)
 
 
 
@@ -142,7 +142,7 @@ Status esperado: 200 ok
 
 **/orders**
 
-![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/tree/master/imagens/findAll.PNG)
+![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/blob/master/imagens/findAll.PNG)
 
 ### GET - Find by ID
 
@@ -158,7 +158,7 @@ Para buscar o item desejado passar o ID como parâmetro na requisição, Status 
 
 **/orders/1**
 
-![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/tree/master/imagens/findById.PNG)
+![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/blob/master/imagens/findById.PNG)
 
 ### POST - Insert User, Product, Category, Order
 
@@ -181,7 +181,7 @@ Para inserir um usuário, colocar no Body, raw, tipo Json, inserir os dados dese
 } 
 ```
 
-![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/tree/master/imagens/addITem.PNG)
+![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/blob/master/imagens/addITem.PNG)
 
 ### PUT - Update User, Product, Category by id
 
@@ -203,7 +203,7 @@ No Body da requisição clicar em raw, tipo Json e adicionar o campo que deseja 
 }
 ```
 
-![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/tree/master/imagens/updateById.PNG)
+![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/blob/master/imagens/updateById.PNG)
 
 ### DELETE - Delete Item by ID
 
@@ -215,7 +215,7 @@ Para excluir um item, passar o ID como parâmetro da requisição, Status espera
 
 **/categories/1
 
-![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/tree/master/imagens/deleteItem.PNG)
+![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/blob/master/imagens/deleteItem.PNG)
 
 
 
