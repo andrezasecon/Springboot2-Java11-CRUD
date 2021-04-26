@@ -160,7 +160,7 @@ Para buscar o item desejado passar o ID como parâmetro na requisição, Status 
 
 ![](https://github.com/andrezasecon/Springboot2-Java11-CRUD/blob/master/imagens/findById.PNG)
 
-### POST - Insert User, Product, Category, Order
+### POST - Insert User, Product and Category
 
 Para inserir um usuário, colocar no Body, raw, tipo Json, inserir os dados desejados no formato Json, Status esperado: 201 ok
 
@@ -169,8 +169,6 @@ Para inserir um usuário, colocar no Body, raw, tipo Json, inserir os dados dese
 **/products**
 
 **/categories**
-
-**/orders**
 
 ```
 {
